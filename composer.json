@@ -1,0 +1,21 @@
+{
+    "name": "spark/db",
+    "description": "Spark database manager",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Chris Harris",
+            "email": "c.harris@hotmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spar\\Db\\": ""
+        }
+    }
+}
+
