@@ -626,7 +626,7 @@ class Select extends AbstractSql implements FilterCapableInterface, JoinCapableI
      */
     private function createSelect($column)
     {        
-        $parts = array_pad(array_map('trim', preg_split('/(AS|as)/', $column, 2)), 2, '');
+        $parts = array_pad(array_map('trim', preg_split('/\s+(AS|as)\s+/', $column, 2)), 2, '');
         
         $identifier = (string) $parts[0];
         if (is_string($parts[1]) && $parts[1] !== '') {
