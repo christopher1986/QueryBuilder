@@ -84,7 +84,8 @@ class Statement implements StatementInterface, IteratorAggregate
      */
     public function execute(array $params = array())
     {
-        return $this->pdoStmt->execute($params);
+        $stmt = $this->pdoStmt;
+        return (!empty($params)) ? $stmt->execute($params) : $stmt->execute();
     }
     
     /**
@@ -102,7 +103,7 @@ class Statement implements StatementInterface, IteratorAggregate
     public function fetchAll($type = self::FETCH_OBJ)
     {
         $style = $this->getFetchStyle($type);
-        return $this->pdoStmt->fetchAll($type);
+        return $this->pdoStmt->fetchAll($style);
     }
     
     /**
@@ -137,7 +138,7 @@ class Statement implements StatementInterface, IteratorAggregate
     public function unbindParam($name)
     {
         if ($this->hasParam($name)) {
-            $this->pdoStmt->bindParam($param, '', PDO::PARAM_STR)
+            $this->pdoStmt->bindParam($param, '', PDO::PARAM_STR);
         }
     }
     
