@@ -120,7 +120,11 @@ class Connection implements ConnectionInterface
     }
     
     /**
-     * {@inheritDoc}
+     * Places quotes around the input string (if required) and escapes special characters within 
+     * the input string.
+     *
+     * @param string $input the string to be quoted.
+     * @return a quoted string that is theoretically safe to pass into an SQL statement.
      */
     public function quote($input)
     {

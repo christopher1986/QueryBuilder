@@ -58,7 +58,7 @@ class Statement implements StatementInterface, IteratorAggregate
      *
      * @var wpdb
      */
-    private $connection;
+    private $connection = null;
 
     /**
      * A collection of parameter objects.

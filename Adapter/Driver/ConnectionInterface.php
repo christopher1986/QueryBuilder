@@ -87,16 +87,7 @@ interface ConnectionInterface
     /**
      * Returns the last error information from the database resource.
      *
-     * @return string the last error information.
+     * @return string|array the last error information.
      */
      public function errorInfo();
-     
-     /**
-      * Places quotes around the input string (if required) and escapes special characters within 
-      * the input string.
-      *
-      * @param string $input the string to be quoted.
-      * @return a quoted string that is theoretically safe to pass into an SQL statement.
-      */
-     public function quote($input);
 }
